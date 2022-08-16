@@ -10,3 +10,10 @@ A solution is to map each sum to between 0 and the maximum value. Which will res
 
 
 We can now change the function to by x * y, and change the max value to (width - 1) * (height - 1)
+
+
+
+Next we can divide the max value by a changing divisor, which will cause the pixels to become white earlier. We can also modulate this divisor in order to create a pulsating effect. 
+
+
+Finally, we can modify how we set to the pixels in order to make them reminiscient of a particular red, green, blue color scheme. 
