@@ -14,10 +14,10 @@ An atomspheric like effect. This project started when I was interested in decidi
 ```
 
 The output will look like this:
+------show image---------
 
 
-
-In this case any sum avove 255 will result in white, even though the max value is 998 (width - 1 + height - 1). This can cause the output to look too bright, too fast, and this problem will only grow worse with faster growing functions. A solution is to map each sum to between 0 and the maximum value of the function.
+In this case any product will result in white, even though the max value is 998 (width - 1 + height - 1). This can cause the output to look too bright, too fast, and this problem will only grow worse with faster growing functions. A solution is to map each function result to between 0 and the maximum value of the function.
 ```processing 
 float maxValue = (width - 1) * (height - 1);
 ```
@@ -29,12 +29,13 @@ pixels[width * y + x] = color(mappedValue);
 
 
 Which will result in something like this. 
+------show image---------
 
 Next we can divide the max value by dividing it by a integer divisor, which will cause the pixels to become brigther earlier
 ```processing
 float mappedValue = map(value, 0, maxValue / divisor, 0, 255);
 ```
 We can also modulate this divisor in order to create a pulsating effect. 
-
+------show gif---------
 
 Finally, we can modify how we set to the pixels in order to make them reminiscient of a particular red, green, blue color scheme. 
