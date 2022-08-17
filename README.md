@@ -17,7 +17,7 @@ The output will look like this:
 ------show image---------
 
 
-In this case any product will result in white, even though the max value is 998 (width - 1 + height - 1). This can cause the output to look too bright, too fast, and this problem will only grow worse with faster growing functions. A solution is to map each function result to between 0 and the maximum value of the function.
+In this case any product above 255 will result in white, even though the max value is 998 (width - 1 + height - 1). This can cause the output to look too bright, too fast, and this problem will only grow worse with faster growing functions. A solution is to map each function result to between 0 and the maximum value of the function.
 ```processing 
 float maxValue = (width - 1) * (height - 1);
 ```
