@@ -1,7 +1,20 @@
 # atomshpericPlanet
 
 
-An atomspheric like effect. This project started when I was interested in deciding the grayscale value of each pixel based on the x and y coordinates of each pixel. For example by adding together x and y together. The output will look like this:
+An atomspheric like effect. This project started when I was interested in deciding the grayscale value of each pixel based on the x and y coordinates of each pixel. For example by adding together x and y together. 
+```processing 
+ loadPixels();
+  int divisor = int(map(mouseX, 0, width - 1, 1, 16));
+  for(int x = 0; x < width; x++) {
+    for(int y = 0; y < height; y++) {
+         float value = x + y;
+         pixels[width * y + x] = color(value);
+    }
+  }
+  updatePixels();
+```
+
+The output will look like this:
 
 
 
