@@ -22,7 +22,7 @@ In this case any sum avove 255 will result in white, even though the max value i
 float maxValue = (width - 1) * (height - 1);
 ```
 ```processing 
-float maxValue = (width - 1) * (height - 1);
+float value = x * y;
 float mappedValue = map(value, 0, maxValue, 0, 255);
 pixels[width * y + x] = color(mappedValue);
 ```
