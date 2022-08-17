@@ -2,12 +2,19 @@
 
 ![with color](./atomsphereImages/atomsphereGif.gif)
 
-An atomspheric like effect. This project started when I was interested in deciding the grayscale value of each pixel based its x and y coordinates of each. For example by multiplying x and y together as shown in the snipped below:
+An atomspheric like effect. This project started when I was interested in deciding the grayscale value of each pixel based on its x and y coordinates. This is done by using a 2-input function, for example by multiplying x and y together as shown in the snipped below:
+```
+float twoDimFunction(float x, float y){
+    float result = x * y;
+    return result;
+ 
+}
+```
 ```processing 
  loadPixels();
   for(int x = 0; x < width; x++) {
     for(int y = 0; y < height; y++) {
-         float value = x + y;
+         float value = twoDimFunction(x, y);
          pixels[width * y + x] = color(value);
     }
   }
@@ -20,12 +27,12 @@ The output will look like this:
 ![initial attempt](./atomsphereImages/atomsphereNoMap.png)
 
 
-In this case any product above 255 will result in white, even though the max value is 24,9001 (width - 1 * height - 1). This can cause the output to look too bright, too fast, and this problem will only grow worse with faster growing functions. A solution is to map each function result to between 0 and the maximum value of the function.
+In this case any product above 255 will result in white, even though the max value is 24,9001 (width - 1 * height - 1). This can cause the output to look too bright, too fast, and this problem will only grow worse with faster growing functions. A solution is to map each function (which can be from 0 to and the maximum value of the function) to between 0 and 255.
 ```processing 
 float maxValue = (width - 1) * (height - 1);
 ```
 ```processing 
-float value = x * y;
+float value = twoDimFunction(x, y);
 float mappedValue = map(value, 0, maxValue, 0, 255);
 pixels[width * y + x] = color(mappedValue);
 ```
