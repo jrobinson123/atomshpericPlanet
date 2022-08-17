@@ -46,19 +46,23 @@ class Planet{
   }
     
   void drawPlanet(){
-     int divisor = this.count();
+    
      loadPixels();
+     int divisor = this.count();
+     float maxValue = (width - 1) * (height - 1);
      for(int x = 0; x < width; x++){
        for(int y = 0; y < height; y++){
-           float result = this.twoDimMultiplication(x,y,divisor);
-           pixels[width * y + x] = color(map(result, 0, 255, 0, r), map(result, 0, 255, 0, g), map(result, 0, 255, 0, b));
+           float result = this.twoDimFunction(x,y);
+           float mappedValue =  map(result, 0, maxValue / divisor, 0, 255);
+           pixels[width * y + x] = color(map(mappedValue, 0, 255, 0, r), map(mappedValue, 0, 255, 0, g), map(mappedValue, 0, 255, 0, b));
        }
    }
    updatePixels();
   }
-  float twoDimMultiplication(float x, float y, float divisor){
+  float twoDimFunction(float x, float y){
     float result = x * y;
-    return map(result, 0, width * width / divisor, 0, 255);
+    return result;
+   
 }
   
 }
