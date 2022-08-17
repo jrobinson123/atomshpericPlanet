@@ -14,6 +14,8 @@ An atomspheric like effect. This project started when I was interested in decidi
 ```
 
 The output will look like this:
+
+
 ![initial attempt](./atomsphereImages/atomsphereNoMap.png)
 
 
@@ -28,7 +30,8 @@ pixels[width * y + x] = color(mappedValue);
 ```
 
 
-Which will result in something like this. 
+Which will result in something like this:
+
 ![with mapping](./atomsphereImages/atomsphereMapped.png)
 
 Next we can divide the max value by dividing it by a integer divisor, which will cause the pixels to become brigther earlier
