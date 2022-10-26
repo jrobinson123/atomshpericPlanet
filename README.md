@@ -1,8 +1,8 @@
-# atomshpericPlanet
+# atmoshpericPlanet
 
 ![with color](./atomsphereImages/atomsphereGif.gif)
 
-An atomspheric like effect. This project started when I was interested in deciding the grayscale value of each pixel based on its x and y coordinates. This is done by using a 2-input function, for example by multiplying x and y together as shown in the snippet below:
+An atmospheric like effect. This project started when I was interested in deciding the grayscale value of each pixel based on its x and y coordinates. This is done by using a 2-input function, for example by multiplying x and y together as shown in the snippet below:
 ``` processing
 float twoDimFunction(float x, float y){
     float result = x * y;
