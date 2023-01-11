@@ -1,4 +1,4 @@
-# atmoshpericPlanet
+# atmosphericPlanet
 
 ![with color](./atomsphereImages/atomsphereGif.gif)
 
